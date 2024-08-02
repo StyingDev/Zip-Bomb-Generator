@@ -1,4 +1,5 @@
 # Zip Bomb Generator
+(This Project is unfinished)
 ## Overview
 
 The Zip Bomb Generator is a Python script designed to create zip bomb files quickly and efficiently. A zip bomb is a malicious archive file designed to consume excessive system resources or cause denial-of-service conditions when extracted. This project was developed as part of a project/presentation on malware for a computer science course.
